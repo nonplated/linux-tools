@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import xlsxwriter
 import csv
-
+import os
 
 class ConverterCSV2XLSX:
 
@@ -30,12 +30,19 @@ class Converter:
     def __init__(self, input_filename: str):
         self.input_filename = input_filename
 
+    def get_output_filename(self, convert_type: str) -> str:
+        input_basename, input_extension = os.path.splitext(self.input_filename)
+        output_filename = input_basename + '.' + convert_type
+        return output_filename
+
+    def get_input_extension(self) -> str:
+        _, input_extension = os.path.splitext(self.input_filename)
+        return input_extension
+
     def convert_to(self, convert_type: str, output_filename: str = '', options: dict = {}) -> bool:
         self.output_filename = output_filename
         switch = {
             'xlsx' : ConverterCSV2XLSX(self.input_filename, self.output_filename)
         }
         return switch.get(convert_type)._convert(options)
-        
-
         

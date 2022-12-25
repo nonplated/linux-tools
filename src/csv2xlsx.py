@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
-# from abcmeta import ABC, abstractmethod # https://pypi.org/project/abcmeta/
 from Converter import Converter
 import argparse
-# import glob
-# import sys
-import os
 
 if __name__ == '__main__':
 
@@ -19,15 +15,14 @@ if __name__ == '__main__':
     # Convert all specified files
     try:
         for input_filename in files_to_convert:
-            input_basename, input_extension = os.path.splitext(input_filename)
-            # output_filename = input_filename[:-len(input_extension)] + '.xlsx'
-            output_filename = input_basename + '.xlsx'
-            if (input_extension!='.csv'): 
-                print(f'".csv" extension is required, found: "%s". File ignored: %s' % (input_extension, input_filename) )
-            else:
+            c = Converter(input_filename)
+            output_filename = c.get_output_filename('xlsx')
+            if (c.get_input_extension()=='.csv'): 
                 print(f'Converting %s to %s ... ' % (input_filename, output_filename), end='')
-                (Converter(input_filename)).convert_to('xlsx', output_filename)
+                c.convert_to('xlsx', output_filename)
                 print(f'OK')
+            else:
+                print(f'".csv" extension is required, found: "%s". File ignored: %s' % (c.get_input_extension(), input_filename) )
     except Exception as err: 
         print(f'')    
         print('An exception occurred: ' + str(err))

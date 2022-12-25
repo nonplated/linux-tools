@@ -1,5 +1,20 @@
+import sys
+sys.path.insert(0, './src')
 import runpy
 import openpyxl
+from Converter import Converter
+
+def test_get_output_filename_with_extension():
+    assert './data/something.xlsx' == (Converter('./data/something.input')).get_output_filename('xlsx')
+
+def test_get_output_filename_without_extension():
+    assert './data/something.xlsx' == (Converter('./data/something')).get_output_filename('xlsx')
+
+def test_get_input_extension_with_extension():
+    assert '.xlsx' == (Converter('./data/something.xlsx')).get_input_extension()
+
+def test_get_input_extension_without_extension():
+    assert '' == (Converter('./data/something')).get_input_extension()
 
 # def  test_check_xlsx_fields_after_conversion():
 #     m = runpy.run_path('./src/csv2xlsx.py', )
