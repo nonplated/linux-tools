@@ -10,12 +10,18 @@ Name | Function
 --- | ---
 csv2xlsx | Convert CSV to XLSX format
 
+# Structure 
+Dir | Description
+--- | ---
+`./src/` | Source code
+`./dist/` | Compiled binaries
+
 # Install
 ```bash
 mkdir linux-tools
 clone https://github.com/nonplated/linux-tools .
 ```
-or just copy `./dist/*`
+or just copy all `./dist/*` or selected subdir
 
 # Usage
 From directory where exists `any_file.csv`
@@ -26,12 +32,6 @@ Run without any arguments to see more options in console:
 ```bash
 ./linux-tools/dist/csv2xlsx/csv2xlsx
 ```
-
-# Structure 
-Dir | Description
---- | ---
-`./src/` | Source code
-`./dist/` | Compiled binaries
 
 # Compile new or modified tool
 Use virtual environment (not used here for clarify)
