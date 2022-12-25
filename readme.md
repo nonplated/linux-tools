@@ -22,9 +22,13 @@ Run without any arguments to see more options in console:
 ./linux-tools/dist/csv2xlsx/csv2xlsx
 ```
 
-# Compile new or modified tool
-All sources are in `./src`, compiled scripts in `./dist`
+# Structure 
+Dir | Description
+--- | ---
+`./src/` | Source code
+`./dist/` | Compiled binaries
 
+# Compile new or modified tool
 Use virtual environment (not used here for clarify)
 
 From `./linux-tools` install `pyinstaller` (if not exists) and then compile .py source file to binary linux format.
@@ -38,4 +42,4 @@ Compiled script will appear in `./linux-tools/dist/csv2xlsx` dir.
 # Available tools
 Name | Function
 --- | ---
-csv2xlsx | Converter from CSV to XLSX format
+csv2xlsx | Convert CSV to XLSX format
