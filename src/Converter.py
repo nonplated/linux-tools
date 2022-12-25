@@ -27,13 +27,13 @@ class ConverterCSV2XLSX:
 
 class Converter:
 
-    def __init__(self, input_filename: str, output_filename: str):
+    def __init__(self, input_filename: str):
         self.input_filename = input_filename
-        self.output_filename = output_filename
 
-    def convert(self, convert_type: str, options: dict = {}) -> bool:
+    def convert_to(self, convert_type: str, output_filename: str = '', options: dict = {}) -> bool:
+        self.output_filename = output_filename
         switch = {
-            'csv2xlsx' : ConverterCSV2XLSX(self.input_filename, self.output_filename)
+            'xlsx' : ConverterCSV2XLSX(self.input_filename, self.output_filename)
         }
         return switch.get(convert_type)._convert(options)
         
