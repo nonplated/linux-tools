@@ -34,7 +34,7 @@ Run without any arguments to see more options in console:
 ```
 
 # Compile new or modified tool
-Use virtual environment (not used here for clarify)
+Use virtual environment (not used here for readability)
 
 From `./linux-tools` install `pyinstaller` (if not exists) and then compile .py source file to binary linux format.
 ```bash
