@@ -10,15 +10,16 @@ For linux users.
 mkdir linux-tools
 clone https://github.com/nonplated/linux-tools .
 ```
+or just copy `./dist/*`
 
 # Usage
 From directory where exists `any_file.csv`
 ```bash
-./linux-tools/dist/csv2xls/csv2xls any_file.csv
+./linux-tools/dist/csv2xlsx/csv2xlsx any_file.csv
 ```
 Run without any arguments to see more options in console: 
 ```bash
-./linux-tools/dist/csv2xls/csv2xls
+./linux-tools/dist/csv2xlsx/csv2xlsx
 ```
 
 # Compile new or modified tool
@@ -29,8 +30,12 @@ Use virtual environment (not used here for clarify)
 From `./linux-tools`
 ```bash
 python3 install -U pyinstaller
-pyinstaller --hidden-import xlsxwriter ./src/csv2xls.py
+pyinstaller --hidden-import xlsxwriter ./src/csv2xlsx.py
 ```
-Compiled app will appear in `./linux-tools/dist/csv2xls` dir.
+Compiled app will appear in `./linux-tools/dist/csv2xlsx` dir.
 
 
+# Available tools
+Name | Function
+--- | ---
+csv2xlsx | Converter from CSV to XLSX format
