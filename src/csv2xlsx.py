@@ -26,4 +26,3 @@ if __name__ == '__main__':
     except Exception as err: 
         print(f'')    
         print('An exception occurred: ' + str(err))
-
