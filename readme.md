@@ -1,9 +1,14 @@
 
 # Why?
-To have a compiled+ready+simple+fast+universal tool without any additional requirements.
+To have a compiled+ready+simple+fast+universal+trusted tool without any additional requirements.
 
 # For who?
 For linux users.
+
+# Available tools
+Name | Function
+--- | ---
+csv2xlsx | Convert CSV to XLSX format
 
 # Install
 ```bash
@@ -39,7 +44,3 @@ pyinstaller --hidden-import xlsxwriter ./src/csv2xlsx.py
 Compiled script will appear in `./linux-tools/dist/csv2xlsx` dir.
 
 
-# Available tools
-Name | Function
---- | ---
-csv2xlsx | Convert CSV to XLSX format
