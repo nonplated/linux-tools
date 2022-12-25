@@ -27,12 +27,12 @@ All sources are in `./src`, compiled scripts in `./dist`
 
 Use virtual environment (not used here for clarify)
 
-From `./linux-tools`
+From `./linux-tools` install `pyinstaller` (if not exists) and then compile .py source file to binary linux format.
 ```bash
 python3 install -U pyinstaller
 pyinstaller --hidden-import xlsxwriter ./src/csv2xlsx.py
 ```
-Compiled app will appear in `./linux-tools/dist/csv2xlsx` dir.
+Compiled script will appear in `./linux-tools/dist/csv2xlsx` dir.
 
 
 # Available tools
