@@ -1,28 +1,20 @@
 #!/usr/bin/env python3
 # from abcmeta import ABC, abstractmethod # https://pypi.org/project/abcmeta/
+from Converter import Converter
+import argparse
 import glob
 import sys
 import os
-from Converter import Converter
-
 
 if __name__ == '__main__':
 
-    # Get arguments / Usage
-    if len(sys.argv)==2: 
-        # files_to_convert = glob.glob(os.path.join('.', '*.csv'))
-        files_to_convert = glob.glob(os.path.join('.', sys.argv[1]))
-        if (len(files_to_convert)==0): 
-            sys.exit(f'No files matching the pattern were found: %s' % os.path.join('.', sys.argv[1]))
-    elif (len(sys.argv)>=2):
-        files_to_convert = sys.argv[1:]
-    else:
-        print('csv2xlsx -- convert CSV files to XLSX format // 2022 // MD')
-        print('Usage: ')
-        print('        ./csv2xlsx filename1.csv [filename2.csv] ...')
-        print('        ./csv2xlsx *.csv     -- convert all files from current dir according to the pattern *.csv')
-        sys.exit()
+    # Usage
+    parser = argparse.ArgumentParser(description='csv2xlsx -- convert CSV files to XLSX format // 2022 // MD')
+    parser.add_argument('filename_csv', nargs='+', help="search pattern (csv extension required)")
+    args = parser.parse_args()
 
+    # Define files
+    files_to_convert = args.filename_csv
 
     # Convert all specified files
     try:
