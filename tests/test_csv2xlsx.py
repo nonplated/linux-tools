@@ -16,6 +16,8 @@ def test_get_input_extension_with_extension():
 def test_get_input_extension_without_extension():
     assert '' == (Converter('./data/something')).get_input_extension()
 
+    
+
 # def  test_check_xlsx_fields_after_conversion():
 #     m = runpy.run_path('./src/csv2xlsx.py', )
 #     m['main']('','./tests/data/orlenpaczka.csv')

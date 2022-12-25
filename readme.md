@@ -1,9 +1,9 @@
 
 # 👨🏻‍🎓 Why?
-To have a compiled+ready+simple+fast+universal+trusted tool without any additional requirements.
+To have a compiled+ready+simple+trusted tool without any requirements to run. It can be done with [pyinstaller](https://pyinstaller.org/en/stable/), so you will never see error for missed modules or even python interpreter is not needed.
 
 # 👶 For who?
-For linux users.
+For linux user, who wants to convert files from bash.
 
 # 📚 Available tools
 Name | Function
