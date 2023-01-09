@@ -1,6 +1,6 @@
 
 # 👨🏻‍🎓 Why?
-To have a compiled+ready+simple+trusted tool without any requirements to run. It can be done with [pyinstaller](https://pyinstaller.org/en/stable/), so you will never see error for missed modules or even python interpreter is not needed.
+To have a standalone compiled+ready+simple+trusted tool without any requirements to run. It can be done with [pyinstaller](https://pyinstaller.org/en/stable/), so you will never see error for missed modules or even python interpreter is not needed.
 
 # 👶 For who?
 For linux user, who wants to convert files from bash.
@@ -9,6 +9,7 @@ For linux user, who wants to convert files from bash.
 Name | Function
 --- | ---
 csv2xlsx | Convert CSV to XLSX format
+csv2json | Convert CSV to JSON format
 
 # 💄 Structure 
 Dir | Description
@@ -24,6 +25,9 @@ clone https://github.com/nonplated/linux-tools .
 or just copy all `./dist/*` or selected subdir
 
 # 🔧 Usage
+```bash
+usage: csv2xlsx.py [-h] filename_csv [filename_csv ...]
+```
 From directory where exists `any_file.csv`
 ```bash
 ./linux-tools/dist/csv2xlsx/csv2xlsx any_file.csv
